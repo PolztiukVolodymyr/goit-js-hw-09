@@ -10,9 +10,29 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+ 
 }
 
 img {
   display: block;
   max-width: 100%;
 }
+ button {
+   padding: 5px 10px;
+ }
+
+ .timer{
+  display: flex;
+  text-align: center;
+ }
+
+ .field{
+   display: flex;
+   flex-direction: column;
+  padding: 10px;
+ }
+ .value{
+  font-family: sans-serif;;
+  font-size: 36px;
+  font-weight: 500;
+ }
