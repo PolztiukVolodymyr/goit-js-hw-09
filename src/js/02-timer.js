@@ -27,7 +27,9 @@ const options = {
     } else {
       refs.btnStart.disabled = false;
       selectedDate = selectedDates[0] - options.defaultDate;
-      // console.log(selectedTime);
+      // console.log(selectedDates[0] !== 0);
+      // console.log(selectedDates[0] < options.defaultDate);
+      // console.log(options.defaultDate);
 
     }
  
@@ -35,15 +37,18 @@ const options = {
 
 };
 
-let a = 100;
 function onStart() {
     
   if (isActiv) {
     return
   };
   isActiv = true;
-    setInterval(() => {
-
+  
+  setInterval(() => {
+      if(selectedDate <= 0){
+      return
+    };
+    console.log(selectedDate)
       const deltaTime = selectedDate -=1000;
       const { days, hours, minutes, seconds } = convertMs(deltaTime);
       refs.days.textContent = days;
@@ -54,9 +59,7 @@ function onStart() {
       },1000);
 }
   
-
-    
-
+  
 refs.btnStart.addEventListener("click", onStart);
 
 
