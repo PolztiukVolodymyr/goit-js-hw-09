@@ -27,9 +27,6 @@ const options = {
     } else {
       refs.btnStart.disabled = false;
       selectedDate = selectedDates[0] - options.defaultDate;
-      // console.log(selectedDates[0] !== 0);
-      // console.log(selectedDates[0] < options.defaultDate);
-      // console.log(options.defaultDate);
 
     }
  
@@ -48,7 +45,7 @@ function onStart() {
       if(selectedDate <= 0){
       return
     };
-    console.log(selectedDate)
+    // console.log(selectedDate)
       const deltaTime = selectedDate -=1000;
       const { days, hours, minutes, seconds } = convertMs(deltaTime);
       refs.days.textContent = days;
