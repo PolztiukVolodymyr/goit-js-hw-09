@@ -22,12 +22,16 @@ function createPromise(position, delay) {
  
 }
 
-function onSubmit(e) {
-  e.preventDefault();
+function onSubmit(evt) {
+  evt.preventDefault();
+  console.log(evt.currentTarget.elements.amount.value);
+  const firstDelay = Number(evt.currentTarget.elements.delay.value);
+  const stepDelay = Number(evt.currentTarget.elements.step.value);
+  const amountProm = Number(evt.currentTarget.elements.amount.value);
   
-  const firstDelay = Number(refs.form.delay.value);
-  const stepDelay = Number(refs.form.step.value);
-  const amountProm = Number(refs.form.amount.value);
+  // const firstDelay = Number(refs.form.delay.value);
+  // const stepDelay = Number(refs.form.step.value);
+  // const amountProm = Number(refs.form.amount.value);
   let numDelay = firstDelay;
 
    if (numDelay <= 0) {
@@ -43,7 +47,7 @@ function onSubmit(e) {
          .catch(({ position, delay }) => {
           Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
          });
-     
+         
    }
 
 }

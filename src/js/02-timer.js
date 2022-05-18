@@ -42,10 +42,15 @@ function onStart() {
   isActiv = true;
   
   setInterval(() => {
-      if(selectedDate <= 0){
+    if (selectedDate <= 0) {
+      refs.days.textContent = "00";
+      refs.hours.textContent = "00";
+      refs.minutes.textContent = "00";
+      refs.seconds.textContent = "00";
       return
     };
-    // console.log(selectedDate)
+    console.log(selectedDate)
+      refs.btnStart.disabled = true;
       const deltaTime = selectedDate -=1000;
       const { days, hours, minutes, seconds } = convertMs(deltaTime);
       refs.days.textContent = days;
